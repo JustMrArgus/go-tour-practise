@@ -59,4 +59,28 @@ func main() {
 		}
 		fmt.Println("")
 	}
+
+	for i, v := range books {
+		book_number := i + 1
+		fmt.Printf("Book number %d - %s\n", book_number, v.Title)
+	}
+
+	books_map := make(map[string]int)
+	books_map["a"] = 1
+	books_map["b"] = 2
+	books_map["c"] = 3
+	books_map[books[0].Title] = books[0].Year
+
+	fmt.Println(books_map)
+	fmt.Println(books_map["a"])
+
+	delete(books_map, "b")
+	books_map[books[0].Title] = 1984
+
+	fmt.Println(books_map)
+	fmt.Println(books_map[books[0].Title])
+
+	elem, ok := books_map["a"]
+	fmt.Println(elem, ok)
+
 }
